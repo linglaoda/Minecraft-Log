@@ -87,3 +87,4 @@ while i<36:
 with open(saveurl,"w") as f:
     f.write(all_chat)
 
+input("已将格式化后的文件写出至"+saveurl+"\n按任意键退出")
