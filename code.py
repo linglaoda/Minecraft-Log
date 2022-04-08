@@ -40,8 +40,9 @@ while i<lennumber:
         i=i+1
     else:
         nowlen=text_list[i]
-        if "[" not in nowlen:
-            all_chat=all_chat+nowlen+"\n"
+        if "java.util.concurrent.ExecutionException:" not in nowlen and "Caused by: java.lang" not in nowlen and "	... 9 more" not in nowlen:
+            if "[" not in nowlen:
+                all_chat=all_chat+nowlen+"\n"
         i=i+1
 
 
