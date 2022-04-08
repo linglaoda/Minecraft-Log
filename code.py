@@ -43,7 +43,7 @@ while i<lennumber:
         i=i+1
     else:
         nowlen=text_list[i]
-        if "java.util.concurrent.ExecutionException:" not in nowlen and "Caused by: java.lang" not in nowlen and "	... 9 more" not in nowlen:
+        if "java.util.concurrent.ExecutionException:" not in nowlen and "Caused by: java.lang" not in nowlen and "	... 9 more" not in nowlen and '"gl":' not in nowlen and '"glRenderer":' not in nowlen and '"glVer"' not in nowlen and '"glVendor":' not in nowlen and '}' not in nowlen:  #用于屏蔽掉不必要的日志
             if "[" not in nowlen:
                 all_chat=all_chat+nowlen+"\n"
         i=i+1
@@ -86,5 +86,4 @@ while i<36:
 
 with open(saveurl,"w") as f:
     f.write(all_chat)
-
 
