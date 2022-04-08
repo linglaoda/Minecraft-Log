@@ -6,6 +6,9 @@ username = getpass.getuser()
 #---------修改此处----------
 fileurl="C:/Users/"+username+"/AppData/Roaming/.minecraft/logs/latest.log" #如果你使用了第三方PVP客户端(Blclient),启用了版本隔离或修改了默认路径,您需要修改该路径;若是原版,Forge或Optfine,则无需修改
 saveurl="D:/1.txt" #格式化完毕后文本的保存路径,可自行修改,请提前创建指定文件
+
+#重要:要将路径中的\换为/,否侧python可能无法识别
+
 #---------下方没有需要修改的地方---------
 
 with open(fileurl,"r") as f:    #设置文件对象
