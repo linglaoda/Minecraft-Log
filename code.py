@@ -11,7 +11,7 @@ saveurl="D:/1.txt" #格式化完毕后文本的保存路径,可自行修改,请�
 
 
 nochat='java.util.concurrent.ExecutionException: | Caused by: java.lang | 	... 9 more | "gl": | "glRenderer": | "glVer" | "glVendor": | } | warning | Vertex info | ----------- | Fragment info'
-#↑以上文本为自定义屏蔽,默认无需修改
+#↑以上文本为自定义屏蔽,默认无需修改,使用" | "分割
 
 #---------下方没有需要修改的地方---------
 
