@@ -9,7 +9,28 @@ saveurl="D:/1.txt" #格式化完毕后文本的保存路径,可自行修改,请�
 
 #重要:要将路径中的\换为/,否侧python可能无法识别
 
+
+nochat='java.util.concurrent.ExecutionException: | Caused by: java.lang | 	... 9 more | "gl": | "glRenderer": | "glVer" | "glVendor": | } | warning | Vertex info | ----------- | Fragment info'
+#↑以上文本为自定义屏蔽,默认无需修改
+
 #---------下方没有需要修改的地方---------
+
+nochat_list=nochat.split(" | ")
+nochat_len=len(nochat_list)
+
+def nochattrue(text): #判断文本是否需要屏蔽,是返回true,否返回false
+    a=0
+    nohas=0
+    while a<nochat_len:
+        if nochat_list[a] not in text:
+            nohas=nohas+1
+        a=a+1
+    if nohas==nochat_len:
+        return('false')
+    else:
+        return('true')
+
+
 
 with open(fileurl,"r") as f:    #设置文件对象
     text=f.read()
@@ -43,7 +64,7 @@ while i<lennumber:
         i=i+1
     else:
         nowlen=text_list[i]
-        if "java.util.concurrent.ExecutionException:" not in nowlen and "Caused by: java.lang" not in nowlen and "	... 9 more" not in nowlen and '"gl":' not in nowlen and '"glRenderer":' not in nowlen and '"glVer"' not in nowlen and '"glVendor":' not in nowlen and '}' not in nowlen:  #用于屏蔽掉不必要的日志
+        if nochattrue(nowlen)=='false':
             if "[" not in nowlen:
                 all_chat=all_chat+nowlen+"\n"
         i=i+1
